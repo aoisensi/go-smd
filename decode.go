@@ -172,7 +172,7 @@ func (d *decoder) ReadTriangles() error {
 				w, err := strconv.ParseFloat(vv[11+j*2], 32)
 				links[j] = &TriangleVertexLink{
 					BoneID: bid,
-					Weight: float32(w),
+					Weight: float64(w),
 				}
 			}
 			tv.Links = links

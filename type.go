@@ -10,8 +10,8 @@ type Skeleton map[int][]*SkeletonBone
 
 type SkeletonBone struct {
 	BoneID int
-	Pos    [3]float32
-	Rot    [3]float32
+	Pos    [3]float64
+	Rot    [3]float64
 }
 
 type Triangle struct {
@@ -21,13 +21,13 @@ type Triangle struct {
 
 type TriangleVertex struct {
 	ParentBoneID int
-	Pos          [3]float32
-	Norm         [3]float32
-	UV           [2]float32
+	Pos          [3]float64
+	Norm         [3]float64
+	UV           [2]float64
 	Links        []*TriangleVertexLink
 }
 
 type TriangleVertexLink struct {
 	BoneID int
-	Weight float32
+	Weight float64
 }
