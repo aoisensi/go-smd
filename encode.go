@@ -16,7 +16,9 @@ func (smd *SMD) Encode(w io.Writer) error {
 	}
 	if smd.Skeleton != nil {
 		fmt.Fprintln(w, "skeleton")
-		for time, bones := range smd.Skeleton {
+		times := len(smd.Skeleton)
+		for time := 0; time < times; time++ {
+			bones := smd.Skeleton[time]
 			fmt.Fprintf(w, "  time %v\n", time)
 			for _, bone := range bones {
 				fmt.Fprintf(
